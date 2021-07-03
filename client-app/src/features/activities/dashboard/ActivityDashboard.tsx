@@ -29,6 +29,7 @@ export default function ActivityDashboard({activities, selectedActivity, deleteA
                     actvities={activities} 
                     selectActivity={selectActivity}
                     deleteActivity={deleteActivity}
+                    submitting={submitting}
                 />
             </Grid.Column>
             <Grid.Column width='6'>
