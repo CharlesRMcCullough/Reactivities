@@ -1,32 +1,29 @@
+using API.Login;
 using Domain;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Persistence;
 
 namespace API.Controllers;
 
     public class ActivitiesController : BaseApiController
     {
-        private readonly DataContext _context;
+    private readonly ActivitiesLogic _logic;
 
         public ActivitiesController(DataContext context)
         {
-            _context = context;
+  
+            _logic = new ActivitiesLogic(context);
         }
-
 
         [HttpGet] //api/activities
         public async Task<ActionResult<List<Activity>>> GetActivities()
         {
-            return await _context.Activities.ToListAsync();
+            return await _logic.GetActivities();
         }
 
         [HttpGet("{id}")] // api/activities/id
         public async Task<ActionResult<Activity>> GetActivitiy(Guid id)
         {
-            return await _context.Activities.FindAsync(id);
+            return await _logic.GetActivitiy(id);
         }
-
-
-
 }
