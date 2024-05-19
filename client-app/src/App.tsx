@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios';
 import './App.css'
+import { Header, Icon } from 'semantic-ui-react';
 
 function App() {
   const [activities, setActivities] = useState([]);
@@ -14,11 +15,10 @@ function App() {
 
   return (
     <div>
-      <h1>Reactivities</h1>
-
-      <ul>
+      <h2 className="font-bold underline">Reactivities</h2>
+      <ul className="divide-y, divide-gray-200">
           { activities.map((activity: any) => (
-            <li key={activity.id}>
+            <li className="py-4 flix" key={activity.id}>
               {activity.title}
             </li>
           ))}
