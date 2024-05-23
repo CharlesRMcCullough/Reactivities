@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import {NextUIProvider} from '@nextui-org/react'
-import App from './App.tsx'
-import './index.css'
+import './app/layout/styles.css'
+import App from './app/layout/App'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

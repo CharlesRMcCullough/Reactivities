@@ -4,6 +4,8 @@
 ## Get latest from `dotnet new gitignore`
 
 appsettings.json
+reactivities.db-shm
+reactivities.db-wal
 # dotenv files
 .env
 
